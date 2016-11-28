@@ -1,0 +1,36 @@
+{
+  "name": "fx-url",
+  "version": "1.0.2",
+  "description": "short the url",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "css-loader": "^0.25.0",
+    "del": "^2.2.2",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-uglifyjs": "^0.6.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^1.13.3",
+    "webpack-stream": "^3.2.0",
+    "zepto": "^1.2.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "qrcodejs": "^1.0.0",
+    "whatwg-fetch": "^1.0.0"
+  }
+}
