@@ -1,6 +1,6 @@
 {
     "name": "fxUrl",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "manifest_version": 2,
     "description": "短地址,short url,shortter",
     "browser_action": {

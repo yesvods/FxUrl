@@ -13,20 +13,15 @@ function copyToClipboard(text){
 }
 
 function fetchShortUrl(url){
-  const api = 'http://dwz.cn/create.php';
+  const api = 'http://api.t.sina.com.cn/short_url/shorten.json?source=2787150331&url_long=' + url;
   var data = new FormData()
-  data.append('url', url)
-  fetch(api, {
-    method: 'post',
-    body: data
-  }).then(res => res.json())
+  fetch(api).then(res => res.json())
   .then(json => {
-    const {status, err_msg, tinyurl} = json;
+    const {url_short, error} = json[0];
     console.log(json)
-    console.log('fetch', status)
-    if(status!=0) return show(err_msg);
-    show(`${tinyurl} (已复制到剪切板)`);
-    copyToClipboard(tinyurl);
+    if(error) return show(error);
+    show(`${url_short} (已复制到剪切板)`);
+    copyToClipboard(url_short);
   });
 }
 

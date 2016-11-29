@@ -3,6 +3,7 @@ import del from 'del'
 import webpack from 'gulp-webpack';
 import named from 'vinyl-named';
 import uglify from 'gulp-uglifyjs';
+import zip from 'gulp-zip';
 
 gulp.task('clean', done => {
   return del('dist')
@@ -37,7 +38,7 @@ gulp.task('prebuild', ['clean', 'move'],done => {
     .pipe(gulp.dest('dist/lib'));
 });
 
-gulp.task('build', ['clean', 'move'],done => {
+gulp.task('distbuild', ['clean', 'move'],done => {
   return gulp.src(['./src/lib/index.js'])
     .pipe(named())
     .pipe(webpack({
@@ -57,6 +58,12 @@ gulp.task('build', ['clean', 'move'],done => {
     .pipe(uglify())
     .pipe(gulp.dest('dist/lib'));
 });
+
+gulp.task('build', ['distbuild'], done => {
+  return gulp.src('dist/**/*.*')
+          .pipe(zip('dist.zip'))
+          .pipe(gulp.dest('.'))
+})
 
 
 gulp.task('dev', done => {
